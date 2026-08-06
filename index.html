@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vansh's WebOS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark">
+
+  <header id="panel">
+    <div class="panel-left">
+      <div class="os-logo">⚡ MyOS</div>
+      <button class="nav-btn" onclick="toggleWin('about-app')">About</button>
+      <button class="nav-btn" onclick="toggleWin('notes-app')">Notes</button>
+      <button class="nav-btn" onclick="toggleWin('theme-app')">Themes</button>
+    </div>
+    <div class="panel-right">
+      <span id="clock-widget">12:00 PM</span>
+    </div>
+  </header>
+
+  <main id="desktop">
+
+    <div class="desktop-icon" onclick="toggleWin('about-app')">
+      <div class="icon-img">👤</div>
+      <span>About Me</span>
+    </div>
+    <div class="desktop-icon" onclick="toggleWin('notes-app')">
+      <div class="icon-img">📝</div>
+      <span>Notes</span>
+    </div>
+    <div class="desktop-icon" onclick="toggleWin('theme-app')">
+      <div class="icon-img">🎨</div>
+      <span>Themes</span>
+    </div>
+
+    <div class="window" id="about-app">
+      <div class="window-header">
+        <span class="title">About_Me.txt</span>
+        <button class="close-btn" onclick="toggleWin('about-app')">✕</button>
+      </div>
+      <div class="window-body">
+        <h3>Hey there! 👋</h3>
+        <p>Welcome to my custom WebOS created for the Hack Club mission.</p>
+        <br>
+        <p>Try dragging these windows around, editing notes, or toggling themes from the top menu!</p>
+      </div>
+    </div>
+
+    <div class="window" id="notes-app">
+      <div class="window-header">
+        <span class="title">Scratchpad</span>
+        <button class="close-btn" onclick="toggleWin('notes-app')">✕</button>
+      </div>
+      <div class="window-body">
+        <textarea placeholder="Write quick thoughts or todo lists here..."></textarea>
+      </div>
+    </div>
+
+    <div class="window" id="theme-app">
+      <div class="window-header">
+        <span class="title">Appearance Settings</span>
+        <button class="close-btn" onclick="toggleWin('theme-app')">✕</button>
+      </div>
+      <div class="window-body">
+        <p class="section-label">Select Desktop Theme:</p>
+        <div class="theme-grid">
+          <button class="theme-choice" onclick="applyTheme('dark')">🌙 Midnight</button>
+          <button class="theme-choice" onclick="applyTheme('sunset')">🌅 Sunset Gradient</button>
+          <button class="theme-choice" onclick="applyTheme('cyber')">📟 Matrix / Cyber</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
